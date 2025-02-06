@@ -1,7 +1,7 @@
 ---
 title: "Effects of FMT therapy and TBI on Alzheimer's"
 description: |
-  A research study focused on observing the links between the fecal matter transplants, TBI, and the gut microbiome.
+  A research study focused on observing the links between the fecal matter transplants (FMTs), TBI, and the gut microbiome.
 author:
   - name: Austin Marshall
     url: https://microbemarsh.github.io/
@@ -19,7 +19,7 @@ output:
 
 ## Change intro paragraph
 
-This vignette contains all of the code necessary for the microbiome analysis within our paper named "Antibiotic treatment induces microbiome dysbiosis and reduction of neuroinflammation following traumatic brain injury in mice". In this study, we researched the relationship between antibiotics, traumatic brain injury, and the gut microbiome. The gut microbiome analysis of this study was performed through short-read 16S V1-V3 sequencing performed at Baylor College of Medicine with raw fastq data accessible at BioProject [PRJNA1104663](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1104663).
+This vignette contains all of the code necessary for the microbiome analysis within our paper named "". In this study, we researched the relationship between antibiotics, traumatic brain injury, and the gut microbiome. The gut microbiome analysis of this study was performed through short-read 16S V1-V3 sequencing performed at Baylor College of Medicine with raw fastq data accessible at BioProject [??](https://www.ncbi.nlm.nih.gov/bioproject/).
 
 Much of the data and visualizations here had slight visual touching up in photoshop/coreldraw just to make them look _perf_ prior to submission, so if you see a difference between the figures produced here and those found within our paper that is why.
 
@@ -118,11 +118,6 @@ sum(st)/sum(sta)
 
 saveRDS(st, "fmt_ad_no_abx_st.rds")
 ```
-
-```{r}
-st = readRDS("fmt_ad_no_abx_st.rds")
-```
-
 
 Sanity check
 
@@ -358,7 +353,7 @@ ggsave("div_stats.png", height = 5, width = 7, units = "in")
 Now we have an idea on how to filter our data for beta diversity analyses, we start by subsetting for Treatments then plot using weighted unifrac distance PCoA. We also compute the permanova values between groups which was added to the figure later using CorelDRAW.
 
 
-```{r}
+```{r, eval=FALSE}
 injury_colors <- c("Sham" = "#007bff", "TBI" = "#ff0000")
 
 ps_base_m <- subset_samples(physeq, Timepoint == "Baseline" & Sex == "M")
